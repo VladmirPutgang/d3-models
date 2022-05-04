@@ -30,16 +30,20 @@ function drawGraph(data) {
     .paddingInner(0.25);
 
 
+  let height = window.innerHeight;
+  let width = window.innerWidth;
+  let margin = height * .1;
   // draw bars
   svg
     .selectAll('.bars')
     .data(data)
     .enter()
     .append('rect')
-    .attr('transform', 'translate(0,0)')
+    .attr('transform', 'translate(100,100)')
     .attr('x', d=>xScale(d.Month))
+    .attr('y', d=>yScale(d.Sales))
     .attr('width', d=>xScale.bandwidth())
-    .attr('height', d=>yScale(d.Sales))
+    .attr('height', d=>(height - yScale(d.Sales)))
     .attr('fill', 'dodgerblue')
 
     // .attr('dx', ((d, i)=> i * 120 + 30))
