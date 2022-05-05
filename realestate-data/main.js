@@ -29,10 +29,21 @@ function drawGraph(data) {
     .rangeRound([0, 300])
     .paddingInner(0.25);
 
-
   let height = window.innerHeight;
   let width = window.innerWidth;
   let margin = height * .1;
+
+  // axes
+  const xAxis = d3
+    .select('svg')
+    .append('g')
+    .attr('transform', "translate(0, 420)")
+    .call(d3.axisBottom(xScale))
+    // .attr('text-anchor', 'end')
+
+
+
+
   // draw bars
   svg
     .selectAll('.bars')

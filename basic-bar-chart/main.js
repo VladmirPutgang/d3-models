@@ -33,7 +33,7 @@ const data = d3.csv('xyz.csv')
 
   // adds margin then adds the x axis
   g.append('g')
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0," + height-(height/10) + ")")
     .call(d3.axisBottom(xScale));
 
   // Adds the y axis and formats the ticks
