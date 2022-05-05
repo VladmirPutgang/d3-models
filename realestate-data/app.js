@@ -21,7 +21,7 @@ function drawData(data){
   let minSales = d3.min(data, d=>d.Sales)
   const yScale = d3
     .scaleLinear()
-    .domain([minSales*.8, d3.max(data, d => d.Sales)])
+    .domain([minSales*.8, (d3.max(data, d => d.Sales)*1.05)])
     .range([height*.75, height*.1])
 
   const xScale = d3
