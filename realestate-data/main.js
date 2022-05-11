@@ -40,6 +40,7 @@ function drawGraph(data) {
     .attr('transform', "translate(0, 420)")
     .call(d3.axisBottom(xScale))
     // .attr('text-anchor', 'end')
+    xAxis.ticks(10)
 
 
 
